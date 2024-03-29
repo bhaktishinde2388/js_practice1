@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+           background-color: #FBDA61;
+           background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+
+
+            height: 100vh;
+        }
+        .heading
+        {
+           text-align: center;
+        }
+        .container
+        {
+        background-color: rgb(135, 183, 225);
+         width: 500px;
+         height: 270px;
+         display: block;
+         margin: 0 auto;
+         padding: 20px;
+         border: 2px solid black;
+         box-shadow: 5px 10px 20px 1px rgb(55, 53, 52);
+        }
+        @media screen and (max-width:768px)
+        {
+            .container
+        {
+         background-color: rgb(138, 201, 255);
+         width: 90%;
+         height: 250px;
+         display: block;
+         margin: 0 auto;
+         padding: 20px;
+     
+        }
+    }
+        .inputbox
+        {
+           padding: 10px;
+           display: block;
+           width: 80%;
+           margin: 0 auto;
+           font-size: 17px;
+        }
+        .btn-container
+        {
+            display: flex;
+        }
+        .btn
+        {
+            display: block;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 15%;
+            width: 25%;
+            font-size: 17px;
+            background: #000;
+            color: aliceblue;
+            flex-direction: column;
+           
+        }
+        .ans
+        {
+            text-align: center;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+     <h1 class="heading">Calculator for <b>'Area Of Triangle'</b></h1> <br>     <!--area of triangle=1/2*base*height  -->
+    <div class="container"><br>
+        <input  type="text" class="inputbox" id="num1" placeholder="Enter Base"><br><br>
+        <input  type="text" class="inputbox" id="num2" placeholder="Enter Height">
+        <p class="ans" id="Ans"><u>Answer:</u></p>
+    <div class="btn-container">
+        <button class="btn" onclick="areaOfTriangle()">Calculate</button><br>
+        <button type="button" class="btn" onclick="reset()">Reset</button>
+    </div>
+    </div>
+
+    <script>
+        function areaOfTriangle()
+        {
+            const input1=document.getElementById("num1");
+            const input2=document.getElementById("num2");
+            const sum=1/2 * parseInt(input1.value) * parseInt(input2.value) ;
+
+            const ans=document.getElementById("Ans");
+
+            ans.innerText=`Answer:${sum}`;
+          
+        }
+
+        function reset()
+        {
+            const input1=document.getElementById("num1");
+            const input2=document.getElementById("num2");
+            const ans=document.getElementById("Ans");
+            input1.value="";
+            input2.value="";
+            ans.innerText="";
+        }
+    </script>
+</body>
+</html>
